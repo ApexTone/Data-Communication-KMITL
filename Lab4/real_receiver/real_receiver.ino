@@ -44,7 +44,7 @@ void loop()
 {
   while (mySerial.available()) {
     String incoming_text = mySerial.readString();
-    char sender = incoming_text[1], receiver = incoming_text[0], frame_number = incoming_text[2], check = incoming_text[7];
+    char sender = incoming_text[2], receiver = incoming_text[1], frame_number = incoming_text[3], check = incoming_text[8];
     Serial.print("Receive frame\nHeader : ");
     Serial.print(sender);
     Serial.println(receiver);
@@ -66,17 +66,20 @@ void loop()
       Serial.print("\nSend ACK");
       Serial.println(ackNo);
 
-      String responseAck = "";
+      String responseAck = "`";
       responseAck += receiver;
       responseAck += sender;
       responseAck += ackNo;
 
       char resCheck = '0';
       int sum = 0;
-      for (int i = 0; i < responseAck.length(); i++) {
-        for (int j = 0; j < 8; j++) {
-          int x = bitRead(responseAck[i],j);
-          if (x == 1) {
+      for (int i = 0; i < responseAck.length(); i++)
+      {
+        for (int j = 0; j < 8; j++)
+        {
+          int x = bitRead(responseAck[i], j);
+          if (x == 1)
+          {
             sum++;
           }
         }
@@ -86,6 +89,14 @@ void loop()
       }
 
       responseAck += resCheck;
+
+      //send res
+      for (int i = 0; i < responseAck.length(); i++)
+      {
+        mySerial.write(responseAck[i]);
+      }
+      ackNo == '0' ? ackNo = '1' : ackNo = '0';
+      responseAck += "`";
     }
     else
     {
