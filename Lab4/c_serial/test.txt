@@ -1,0 +1,5 @@
+fuck
+you 
+datacom
+frame design
+receiver,sender,16*data,1-odd-parity-check
