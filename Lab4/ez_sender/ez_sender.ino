@@ -29,7 +29,7 @@ void loop()
   for (int i = 0; myString[i] != '\0'; i++)
   {
     mySerial.write(myString[i]);
-    Serial.write(myString[i]);
+    //Serial.write(myString[i]);
     delay(10);
     flushRx();
   }
