@@ -15,7 +15,7 @@ void setup()
   }
   ownerName = Serial.read();
   /*for(int i=7;i>=0;i--){
-    Serial.println(bitRead(ownerName,i));  // bit reading each character
+    Serial.println(bitRead(ownerName,i));  //test bit reading each character
     delay(100);
     }*/
   Serial.print("My ID is : ");
@@ -36,22 +36,25 @@ void flushRx()
 {
   while (mySerial.available())
   {
-    uint8_t tmp = mySerial.read();
+    String tmp = mySerial.readString();
   }
 }
 char ackNo = '0';
 void loop()
 {
+  //can't handle buffer overflowing
+  //find way to reset ackNo
   while (mySerial.available()) {
     String incoming_text = mySerial.readString();
-    char sender = incoming_text[2], receiver = incoming_text[1], frame_number = incoming_text[3], check = incoming_text[8];
+    Serial.println(incoming_text);
+    char receiver = incoming_text[1], sender = incoming_text[2], frame_number = incoming_text[3], check = incoming_text[8];
     Serial.print("Receive frame\nHeader : ");
     Serial.print(sender);
     Serial.println(receiver);
     Serial.print("Frame No. : ");
     Serial.println(frame_number);
     String data = "";
-    for (int i = 3; i <= 6; i++)
+    for (int i = 4; i <= 7; i++)
     {
       data += char(incoming_text[i]);
     }
@@ -61,7 +64,7 @@ void loop()
 
     if (receiver == ownerName)
     {
-      //Do error detection here: if error, do something else
+      //Do error detection (parity check) here: if error, do something else
       Serial.println("Received");
       Serial.print("\nSend ACK");
       Serial.println(ackNo);
