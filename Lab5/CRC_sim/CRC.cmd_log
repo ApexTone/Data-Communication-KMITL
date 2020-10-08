@@ -1,0 +1,48 @@
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+par -w -intstyle ise -ol high -mt off CRC_map.ncd CRC.ncd CRC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml CRC.twx CRC.ncd -o CRC.twr CRC.pcf -ucf CRC.ucf 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+par -w -intstyle ise -ol high -mt off CRC_map.ncd CRC.ncd CRC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml CRC.twx CRC.ncd -o CRC.twr CRC.pcf -ucf CRC.ucf 
+bitgen -intstyle ise -f CRC.ut CRC.ncd 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+par -w -intstyle ise -ol high -mt off CRC_map.ncd CRC.ncd CRC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml CRC.twx CRC.ncd -o CRC.twr CRC.pcf -ucf CRC.ucf 
+bitgen -intstyle ise -f CRC.ut CRC.ncd 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+par -w -intstyle ise -ol high -mt off CRC_map.ncd CRC.ncd CRC.pcf 
+bitgen -intstyle ise -f CRC.ut CRC.ncd 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+par -w -intstyle ise -ol high -mt off CRC_map.ncd CRC.ncd CRC.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml CRC.twx CRC.ncd -o CRC.twr CRC.pcf -ucf CRC.ucf 
+bitgen -intstyle ise -f CRC.ut CRC.ncd 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 
+xst -intstyle ise -ifn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.xst" -ofn "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc CRC.ucf -p xc6slx9-tqg144-3 "CRC.ngc" CRC.ngd  
+map -intstyle ise -p xc6slx9-tqg144-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o CRC_map.ncd CRC.ngd CRC.pcf 

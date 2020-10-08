@@ -1,0 +1,11 @@
+
+
+NET "led1" LOC = P82;
+NET "led3" LOC = P80;
+NET "clear" LOC = P45;
+NET "clock" LOC = P46;
+NET "led4" LOC = P78;
+NET "data_word" LOC = P47;
+
+
+NET "led2" LOC = P81;

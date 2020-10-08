@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\Predator\Desktop\Learning Resources\DataCom\Lab\Lab5\CRC_sim\CRC.ncd
+OUTFILE=C:\Users\Predator\Desktop\Learning Resources\DataCom\Lab\Lab5\CRC_sim\CRC.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Users\Predator\Desktop\Learning Resources\DataCom\Lab\Lab5\CRC_sim
+LICENSE=WebPack
+USER_INFO=__0_0_0

@@ -1,0 +1,61 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Thu Sep 17 22:06:17 2020
+# Process ID: 16692
+# Log file: C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from D:/ISE/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [D:/ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [D:/ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source {C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/pa.fromHdl.tcl}
+# create_project -name CRC_sim -dir "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/planAhead_run_2" -part xc6slx9tqg144-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "CRC.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {CRC.vhf}]]
+# set_property file_type VHDL $hdlfile
+# set_property library work $hdlfile
+# set_property top CRC $srcset
+# add_files [list {CRC.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx9tqg144-3
+Using Verific elaboration
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "D:/ISE/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Parsing VHDL file "C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.vhf" into library work
+Loading clock regions from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockRegion.xml
+Loading clock buffers from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/ClockBuffers.xml
+Loading package pin functions from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx9/tqg144/Package.xml
+Loading io standards from D:/ISE/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from D:/ISE/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : D:/ISE/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.ucf]
+Finished Parsing UCF File [C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/CRC.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 18039c80
+open_rtl_design: Time (s): elapsed = 00:00:06 . Memory (MB): peak = 649.926 ; gain = 165.082
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P80 [get_ports led2]
+endgroup
+set_property is_loc_fixed false [get_ports [list  led2]]
+set_property is_loc_fixed true [get_ports [list  led2]]
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim\planAhead_pid16692.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Thu Sep 17 22:09:00 2020...
+INFO: [Common 17-83] Releasing license: PlanAhead

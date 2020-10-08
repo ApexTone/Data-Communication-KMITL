@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Thu Sep 17 22:06:17 2020
+# Process ID: 16692
+# Log file: C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source {C:/Users/Predator/Desktop/Learning Resources/DataCom/Lab/Lab5/CRC_sim/pa.fromHdl.tcl}
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin P80 [get_ports led2]
+endgroup
+set_property is_loc_fixed false [get_ports [list  led2]]
+set_property is_loc_fixed true [get_ports [list  led2]]
+save_constraints
