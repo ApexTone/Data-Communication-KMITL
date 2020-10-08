@@ -6,8 +6,8 @@
 Adafruit_MCP4725 dac;
 int delay0;
 
-const int zetaLength = 4;
 float zeta[] = {0, 90, 180, 270};
+const int zetaLength = sizeof(zeta)/sizeof(zeta[0]);
 float s[zetaLength];
 uint16_t pwmDuty[zetaLength];
 
@@ -23,8 +23,9 @@ void setup()
 
   for (int i = 0; i < zetaLength; i++)
   {
-    s[i] = sin(zeta[i]);
-    pwmDuty[i] = map(s[i],-1,1,0,4095);
+    float radianI = zeta[i]*PI/180;
+    s[i] = sin(radianI);
+    pwmDuty[i] = (uint16_t)map(s[i],-1,1,0,4095);
     Serial.print(i);
     Serial.print(": ");
     Serial.print(s[i]);
