@@ -21,7 +21,7 @@ int sum=0,maxA=0,prev=0,check=false,output=-1,count=0;
 void setup() 
 {
   dac.begin(0x64);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.flush();
 }
 

@@ -18,7 +18,7 @@ void setup() {
   delay1 = (1000000 / f1 - 1000000 / defaultFreq) / 4;
   delay2 = (1000000 / f2 - 1000000 / defaultFreq) / 4;
   delay3 = (1000000 / f3 - 1000000 / defaultFreq) / 4;
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.flush();
 }
 

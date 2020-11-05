@@ -16,7 +16,7 @@ void setup() {
   sbi(ADCSRA, ADPS2);
   cbi(ADCSRA,ADPS1);
   cbi(ADCSRA,ADPS0);
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.flush();
 }
 

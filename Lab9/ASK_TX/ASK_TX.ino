@@ -12,7 +12,7 @@ char inData[20];
 void setup() {
   dac.begin(0x64);
   delay0 = (1000000 / freq0 - 1000000 / defaultFreq) / 4;
-  Serial.begin(9600);
+  Serial.begin(115200);
   Serial.flush();
 }
 
@@ -31,13 +31,13 @@ void loop() {
         int tmp = inData[i] & 3;
         for (int sl=0;sl<5;sl++) {//5 cycles/baud
           for (int s=0;s<4;s++) {//4 sample/cycle
-            /*
+      /*      
             Serial.print(i);
             Serial.print("\tchar ");
             Serial.print(preShifted);
             Serial.print("\tindex ");
             Serial.println(tmp);
-            */
+        */    
             dac.setVoltage(A[tmp]*S_DAC[s], false);//modify amplitude
             delayMicroseconds(delay0);
           }
