@@ -4,15 +4,16 @@
 
 #define defaultFreq 1700
 #define f0 500
-#define f1 750
-#define f2 1000
-#define f3 1250
+#define f1 800
+#define f2 1100
+#define f3 1400
 int delay0, delay1, delay2, delay3;
 
-const uint16_t S_DAC[4] = {2000, 4000, 2000, 0};  // DAC voltage ranged from 0-4095
+const uint16_t S_DAC[4] = {1000, 2000, 1000, 0};  // 10 bits input
 Adafruit_MCP4725 dac;
 
-void setup() {
+void setup()
+{
   dac.begin(0x64);//A2
   delay0 = (1000000 / f0 - 1000000 / defaultFreq) / 4;
   delay1 = (1000000 / f1 - 1000000 / defaultFreq) / 4;
@@ -22,47 +23,66 @@ void setup() {
   Serial.flush();
 }
 
-void loop() {
+char inData[30];
+void loop()
+{
   if (Serial.available() > 0)
   {
-    int in = Serial.parseInt();
-    int input[4];
-    for(int i=3;i>=0;i--)
+    int counter = 0;
+    String inp = Serial.readString();
+    inp += "\n";
+    for(int i=0;i<inp.length();i++)
     {
-      input[i] = in & 3;
-      in >>= 2; 
+      inData[i] = inp[i];
+      counter++;  
     }
-    for (int k = 3;k >= 0;k--)
+//    Serial.println(inp);
+//    Serial.println(counter);
+    for (int i=0;i<counter-1;i++) //send data
     {
-      int useDelay;
-      if(input[k] == 0)
+      //char preShifted = inData[i];
+      
+      for (int k = 7; k > 0; k -= 2) //send 8 bits from LSB tp MSB
       {
-        Serial.println("00")
-        useDelay = delay0; 
-      }
-      else if(input[k] == 1)
-      {
-        Serial.println("01")
-        useDelay = delay1; 
-      }
-      else if(input[k] == 2)
-      {
-        Serial.println("10")
-        useDelay = delay2; 
-      }
-      else if(input[k] == 3)
-      {
-        Serial.println("11")
-        useDelay = delay3; 
-      }
-
-      for (int sl=0;sl<5;sl++) {//5 cycles/baud
-          for (int s=0;s<4;s++) {//4 sample/cycle
-            dac.setVoltage(S_DAC[s], false);
-            delayMicroseconds(useDelay);//modify frequency
+        int tmp = inData[i] & 3;
+      int useDelay,cyc;  
+        if(tmp == 0)
+        {
+          //Serial.println("00");
+          cyc = 5;
+          useDelay = delay0;   
+        }
+        else if(tmp == 1)
+        {
+          //Serial.println("01");
+          cyc = 8;
+          useDelay = delay1;  
+        }
+        else if(tmp == 2)
+        {
+          //Serial.println("10");
+          cyc = 11;
+          useDelay = delay2; 
+        }
+        else
+        {
+          //Serial.println("11");
+          cyc = 14;
+          useDelay = delay3;  
+        }
+        for (int sl=0;sl<cyc;sl++)
+        {
+          for (int s=0;s<4;s++) //4 sample/cycle
+          {
+            dac.setVoltage(S_DAC[s], false);//modify amplitude
+            delayMicroseconds(useDelay);
           }
         }
+        inData[i]>>=2;
+      }
     }
+    
     dac.setVoltage(0, false);
   }
+
 }
