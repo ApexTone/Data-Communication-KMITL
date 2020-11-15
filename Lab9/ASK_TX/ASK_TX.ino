@@ -37,6 +37,7 @@ void loop() {
 //            Serial.println(preShifted);
 //            Serial.print("\tindex ");
 //            Serial.println(tmp);
+//            Serial.println(A[tmp]*S_DAC[s]);
             dac.setVoltage(A[tmp]*S_DAC[s], false);//modify amplitude
             delayMicroseconds(delay0);
           }
