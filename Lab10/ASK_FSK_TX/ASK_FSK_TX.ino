@@ -19,7 +19,8 @@ const uint16_t SF_DAC[4] = {2000, 4090, 2000, 0};  // for FSK
 char mode;
 
 char inData[30];
-void setup() {
+void setup()
+{
   dac.begin(0x64);
   delay0 = (1000000 / f0 - 1000000 / defaultFreq) / 4;
   delay1 = (1000000 / f1 - 1000000 / defaultFreq) / 4;
@@ -47,6 +48,13 @@ void loop()
         inData[i] = inp[i];
         counter++;
       }
+
+      for (int s = 0; s < 4; s++) //4 sample/cycle -> DUMMY SIGNAL
+      {
+        dac.setVoltage(1000, false);//modify amplitude
+        delayMicroseconds(delay0);
+      }
+
       for (int i = 0; i < counter - 1; i++) { //send data
         for (int k = 7; k > 0; k -= 2) {//send 8 bits from LSB tp MSB
           int tmp = inData[i] & 3;
@@ -59,6 +67,13 @@ void loop()
           inData[i] >>= 2;
         }
       }
+
+      for (int s = 0; s < 4; s++) //4 sample/cycle -> DUMMY SIGNAL
+      {
+        dac.setVoltage(1000, false);//modify amplitude
+        delayMicroseconds(delay0);
+      }
+
       dac.setVoltage(0, false);
     }
     Serial.flush();
@@ -76,6 +91,14 @@ void loop()
         inData[i] = inp[i];
         counter++;
       }
+
+
+      for (int s = 0; s < 4; s++) //4 sample/cycle -> DUMMY SIGNAL
+      {
+        dac.setVoltage(1000, false);//modify amplitude
+        delayMicroseconds(delay0);
+      }
+
       for (int i = 0; i < counter - 1; i++) //send data
       {
         for (int k = 7; k > 0; k -= 2) //send 8 bits from LSB tp MSB
@@ -112,6 +135,12 @@ void loop()
           }
           inData[i] >>= 2;
         }
+      }
+      
+      for (int s = 0; s < 4; s++) //4 sample/cycle -> DUMMY SIGNAL
+      {
+        dac.setVoltage(1000, false);//modify amplitude
+        delayMicroseconds(delay0);
       }
 
       dac.setVoltage(0, false);
